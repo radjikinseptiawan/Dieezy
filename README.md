@@ -1,5 +1,5 @@
 ## Todo
-- Create a authentication system
+- Create an authentication system
 - Create a payment gateway system
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
