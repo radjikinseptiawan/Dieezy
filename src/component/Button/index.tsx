@@ -1,10 +1,10 @@
 "use client"
-import React, { ReactEventHandler, ReactNode, useEffect, useState } from 'react'
+import React, {  ReactNode, useEffect, useState } from 'react'
 interface buttonType{
-    onClick : ReactEventHandler,
-    text : ReactNode
+    text : ReactNode,
+    set : "reset" | "submit" | "button"
 }
-export default function Button1({onClick,text} : buttonType) {
+export default function Button1({text,set} : buttonType) {
   const [width,setWidth] = useState<number>(0)
 
   useEffect(()=>{
@@ -26,7 +26,7 @@ export default function Button1({onClick,text} : buttonType) {
     border-t-indigo-300 
     border-r-indigo-400 
     border-l-indigo-300 
-    text-indigo-600 
+    text-white
     rounded-xl 
     font-medium 
     hover : bg-gradient-to-b
@@ -34,9 +34,9 @@ export default function Button1({onClick,text} : buttonType) {
     hover:text-white 
     hover:cursor-pointer
     active : bg-indigo-600
-    ${width < 600 ? "w-14 text-sm" : "w-32 text-md"}
+    ${width < 600 ? "w-16 text-sm" : "w-32 text-md"}
     `}
-    onClick={onClick}
+    type={set}
     >{text}</button>
     </>
   )
