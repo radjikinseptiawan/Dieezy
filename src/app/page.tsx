@@ -1,10 +1,11 @@
-"use client"
-import { signIn } from "next-auth/react";
+"use server"
+import { redirect } from "next/navigation";
 
-export default function Home() {
-  return (
-    <>
-    <button onClick={()=> signIn()}>login</button>
-    </>
-  );
+export const metadata = {
+  title: "Dieezy",
+};
+
+
+export default async function Home() {
+  await redirect("/login")
 }

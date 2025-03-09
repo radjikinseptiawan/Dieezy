@@ -9,6 +9,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { signIn, useSession } from "next-auth/react";
 
+
 export default function page() {
   const {data : session,status} = useSession()
   const [username,setUsername] = useState<string>("")
@@ -17,7 +18,7 @@ export default function page() {
   
   useEffect(()=>{
     if(status === "authenticated"){
-      window.location.href = "/profile"
+      window.location.href = "/dashboard"
     }
   },[status])
   
@@ -33,7 +34,7 @@ export default function page() {
     if(result?.error){
       setError(result.error)
     }else{
-      window.location.href = "/profile"
+      window.location.href = "/dashboard"
     }
   }
   return (
